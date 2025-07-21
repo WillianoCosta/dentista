@@ -142,7 +142,7 @@ header {
 
 nav ul {
     list-style: none;
-    display: flex;
+    display: flex; /* Default para desktop */
 }
 
 nav ul li {
@@ -172,7 +172,7 @@ nav ul li a:hover::after {
 }
 
 .mobile-menu-toggle {
-    display: none;
+    display: none; /* Esconde por padrão em desktop */
     background: none;
     border: none;
     color: var(--color-gold);
@@ -550,7 +550,7 @@ footer p {
     }
 
     .mobile-menu-toggle {
-        display: block;
+        display: block; /* Mostra o botão de toggle em mobile */
         position: absolute;
         right: 20px;
         top: 25px;
