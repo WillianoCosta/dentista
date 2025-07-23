@@ -99,7 +99,7 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Esta linha faz o logo ir para a esquerda e a nav para a direita */
     align-items: center;
 }
 
@@ -120,9 +120,9 @@ header .container {
     opacity: 0.8;
 }
 
-nav ul {
+nav ul { /* Refere-se a nav ul.nav-links no mobile */
     list-style: none;
-    display: flex;
+    display: flex; /* Para desktop */
 }
 
 nav ul li {
@@ -157,20 +157,28 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+/* Menu Hambúrguer (desktop hidden by default) */
+.hamburger-menu {
+    display: none; /* Esconde o hambúrguer por padrão em desktop */
+    font-size: 1.8em;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+
 /* Hero Section */
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('dentista.jpg') no-repeat center center/cover;
-    /* Use a imagem do dentista como fundo, com um overlay */
-    height: 80vh; /* Altura da seção */
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Garante que a imagem não vaze */
+    overflow: hidden;
 }
 
-.hero-section::before { /* Para um efeito sutil de brilho no fundo */
+.hero-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -186,7 +194,7 @@ nav ul li a:hover::after {
     align-items: center;
     justify-content: center;
     gap: 50px;
-    text-align: left; /* Alinha o texto à esquerda dentro da div */
+    text-align: left;
     width: 100%;
 }
 
@@ -224,7 +232,7 @@ nav ul li a:hover::after {
 
 .hero-image {
     flex: 1;
-    max-width: 400px; /* Tamanho da imagem do dentista na hero section */
+    max-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -233,10 +241,10 @@ nav ul li a:hover::after {
 .hero-image img {
     max-width: 100%;
     height: auto;
-    border-radius: 50%; /* Imagem redonda */
-    border: 5px solid var(--color-primary); /* Borda dourada */
-    box-shadow: 0 0 25px rgba(240, 230, 140, 0.7); /* Brilho dourado */
-    animation: pulse 2s infinite alternate; /* Efeito de pulsação */
+    border-radius: 50%;
+    border: 5px solid var(--color-primary);
+    box-shadow: 0 0 25px rgba(240, 230, 140, 0.7);
+    animation: pulse 2s infinite alternate;
 }
 
 @keyframes pulse {
@@ -258,7 +266,7 @@ section {
 }
 
 section:nth-of-type(even) {
-    background-color: var(--color-secondary); /* Alterna fundo para contraste */
+    background-color: var(--color-secondary);
 }
 
 /* About Section */
@@ -357,8 +365,8 @@ section:nth-of-type(even) {
 
 .gallery-grid img {
     width: 100%;
-    height: 200px; /* Altura fixa para as imagens da galeria */
-    object-fit: cover; /* Recorta para preencher o espaço */
+    height: 200px;
+    object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -386,28 +394,28 @@ section:nth-of-type(even) {
     background-color: var(--color-secondary);
     color: var(--color-text-light);
     position: relative;
-    overflow: hidden; /* Para o carrossel */
+    overflow: hidden;
 }
 
 .testimonial-carousel {
     display: flex;
-    overflow-x: hidden; /* Esconde o excesso para o carrossel */
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     margin-top: 40px;
-    padding-bottom: 20px; /* Espaço para as setas */
+    padding-bottom: 20px;
 }
 
 .testimonial-item {
-    flex: 0 0 100%; /* Cada item ocupa 100% da largura do carrossel */
+    flex: 0 0 100%;
     scroll-snap-align: start;
     padding: 30px;
     background-color: var(--color-background-dark);
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     text-align: center;
-    margin: 0 10px; /* Espaçamento entre os itens */
-    min-width: calc(100% - 20px); /* Garante que o item ocupe a largura completa menos a margem */
+    margin: 0 10px;
+    min-width: calc(100% - 20px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -513,7 +521,7 @@ section:nth-of-type(even) {
 
 .contact-form-map {
     display: flex;
-    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
     margin-top: 40px;
@@ -521,7 +529,7 @@ section:nth-of-type(even) {
 
 .contact-form, .map-container {
     flex: 1;
-    min-width: 300px; /* Garante que não fiquem muito pequenos */
+    min-width: 300px;
     background-color: var(--color-background-dark);
     padding: 30px;
     border-radius: 10px;
@@ -586,7 +594,7 @@ section:nth-of-type(even) {
     border-radius: 5px;
     font-weight: 600;
     text-align: center;
-    display: none; /* Escondido por padrão */
+    display: none;
 }
 
 .form-message.success {
@@ -632,7 +640,7 @@ footer p {
 }
 
 .social-links a img {
-    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(300deg) brightness(100%) contrast(100%); /* Cor dourada para os ícones, ajusta se precisar */
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(300deg) brightness(100%) contrast(100%);
     width: 28px;
     height: 28px;
     transition: transform 0.3s ease;
@@ -640,7 +648,7 @@ footer p {
 
 .social-links a:hover img {
     transform: scale(1.2);
-    filter: invert(70%) sepia(20%) saturate(2000%) hue-rotate(10deg) brightness(110%) contrast(100%); /* Dourado mais intenso no hover */
+    filter: invert(70%) sepia(20%) saturate(2000%) hue-rotate(10deg) brightness(110%) contrast(100%);
 }
 
 
@@ -671,7 +679,7 @@ footer p {
     }
 
     .about-image {
-        order: -1; /* Coloca a imagem acima do texto em mobile */
+        order: -1;
         margin-bottom: 30px;
     }
 
@@ -682,21 +690,64 @@ footer p {
     .contact-form-map {
         flex-direction: column;
     }
-}
 
-@media (max-width: 768px) {
-    nav ul {
-        display: none; /* Esconder menu em mobile, implemente um menu hamburguer com JS se desejar */
+    /* Menu Hambúrguer em Mobile */
+    nav ul.nav-links {
+        display: none; /* Esconde o menu de navegação por padrão em mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Abaixo do header */
+        right: 0; /* Alinha à direita */
+        width: 100%; /* Ocupa a largura total para o menu suspenso */
+        background-color: var(--color-secondary);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        padding: 20px 0;
+        border-top: 1px solid rgba(240, 230, 140, 0.2);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    nav ul.nav-links.active {
+        display: flex; /* Mostra o menu quando ativo */
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    nav ul.nav-links li {
+        margin: 10px 0;
+        text-align: center; /* Centraliza os itens do menu suspenso */
+    }
+
+    nav ul.nav-links li a {
+        display: block;
+        padding: 10px 0;
+        color: var(--color-text-light);
+        font-size: 1.2em;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul.nav-links li a:hover {
+        background-color: rgba(240, 230, 140, 0.1);
+        color: var(--color-primary);
+    }
+
+    nav ul.nav-links li a::after {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block; /* Mostra o hambúrguer em mobile */
+        margin-left: auto; /* Empurra o hambúrguer para a direita quando o logo está à esquerda */
     }
 
     header .container {
-        justify-content: center;
+        justify-content: space-between;
+        /* Já está correto: logo à esquerda, nav (incluindo hambúrguer) à direita */
     }
+}
 
-    .logo {
-        font-size: 1.5em;
-    }
-
+@media (max-width: 768px) {
     h2 {
         font-size: 2em;
     }
